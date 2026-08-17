@@ -1,0 +1,14 @@
+{
+  "name": "adriel-plugins",
+  "owner": {
+    "name": "Adriel Reyes"
+  },
+  "plugins": [
+    {
+      "name": "generate-media",
+      "source": "./",
+      "description": "Image, video, and motion graphic generation skills for Kie AI, with model-tailored prompt writing and a confirmation gate before any spend.",
+      "version": "1.0.0"
+    }
+  ]
+}

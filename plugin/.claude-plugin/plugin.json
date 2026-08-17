@@ -1,0 +1,8 @@
+{
+  "name": "generate-media",
+  "description": "Three skills that turn a brief into a model-tailored image, video, or motion graphic generation request, submit it to Kie AI after explicit confirmation, and download the result.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Adriel Reyes"
+  }
+}
