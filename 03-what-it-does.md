@@ -30,6 +30,8 @@ Saying "just the prompt" stops either skill after step 6, before anything is sub
 
 `duration` type differs by family: Seedance takes a number, Kling takes a string. The request body has to match, not assume one type across models.
 
+`bytedance/seedance-2` is confirmed against the live API, used for both direct video generation and motion-design output (see `generations/manifest.js`). `bytedance/seedance-1.5-pro` and both Kling variants are still documentation-only, unrun against the live API.
+
 ## Image models
 
 | Model | Reference requirement | Image cap |
@@ -40,7 +42,7 @@ Saying "just the prompt" stops either skill after step 6, before anything is sub
 | `gpt-image-2-image-to-image` | **required** | 16 |
 | `seedream/4-5-edit` | optional | 14 |
 
-`nano-banana-2` is confirmed against the live API as of 2026-08-14: `prompt`, `image_input`, `aspect_ratio`, `resolution`, and `output_format` were all accepted in a real run. The other four models in this table are still documentation-only, unrun against the live API.
+`nano-banana-2` and `gpt-image-2-image-to-image` are confirmed against the live API: `nano-banana-2` since 2026-08-14 (`prompt`, `image_input`, `aspect_ratio`, `resolution`, `output_format` all accepted), `gpt-image-2-image-to-image` since via real image-to-image runs (see `generations/manifest.js`). `nano-banana-pro`, `gpt-image-2-text-to-image`, and `seedream/4-5-edit` are still documentation-only, unrun against the live API.
 
 ## Guardrails
 

@@ -34,7 +34,7 @@ fal's response is also easier to parse. Kie's `resultJson` being a JSON string i
 
 fal's file upload is documented through its JavaScript and Python clients (`fal.storage.upload`), not as a plain curl endpoint the way Kie's is. A bash-only port of `kie-upload.sh` would need either a fal client dependency or a separately verified REST upload endpoint. That has not been verified here. Anyone porting should confirm it against fal's current docs first.
 
-None of the fal details on this page have been run against the live fal API. They come from fal's documentation as fetched on 2026-08-14. The Kie side now has one confirmed live run, an image generation on `nano-banana-2` on 2026-08-14, though most of the Kie model surface is still unrun too. See the status section in [README.md](README.md).
+None of the fal details on this page have been run against the live fal API. They come from fal's documentation as fetched on 2026-08-14. The Kie side is now proven across all three skills (image, video, motion-design), with three models confirmed live: `nano-banana-2`, `gpt-image-2-image-to-image`, `bytedance/seedance-2`. The rest of the Kie model surface is still unrun. See the status section in [README.md](README.md).
 
 ## What a port actually involves
 

@@ -74,20 +74,22 @@ Full walkthrough and troubleshooting: [06-adapt-this.md](06-adapt-this.md).
 
 ## Status
 
-Built 2026-08-14. Installed locally. First live run completed 2026-08-14: an image generation on `nano-banana-2` with a local reference image, uploaded via `kie-upload.sh`, submitted, polled, and downloaded. That run verified the full chain end to end (`.env` auto-load, upload, submit, poll, JSON-string parsing of `resultJson`, download before the 24h URL expiry, manifest write) and confirmed these fields are accepted by the live API: `prompt`, `image_input`, `aspect_ratio`, `resolution`, `output_format`.
+Built 2026-08-14. Installed locally, now running in production across all three skills. First live run completed 2026-08-14: an image generation on `nano-banana-2` with a local reference image, uploaded via `kie-upload.sh`, submitted, polled, and downloaded. That run verified the full chain end to end (`.env` auto-load, upload, submit, poll, JSON-string parsing of `resultJson`, download before the 24h URL expiry, manifest write) and confirmed these fields are accepted by the live API: `prompt`, `image_input`, `aspect_ratio`, `resolution`, `output_format`.
+
+Since then, `/generate-video`, `/generate-image`, and `/generate-motion-design` have all produced real output (see `generations/media/` and `generations/manifest.js`): a kultura bottle campaign and flavor shots, a spanish-latte push-in video, and a multi-variant snap-reveal set (image + video). Models confirmed live: `bytedance/seedance-2` (image and video, used for motion-design output), `gpt-image-2-image-to-image`, `nano-banana-2`.
 
 What's still unverified:
 
 | Item | Status |
 |---|---|
-| All four video models (`bytedance/seedance-1.5-pro`, `bytedance/seedance-2`, `kling-2.6/text-to-video`, `kling-2.6/image-to-video`) | No video generation has ever run |
+| `bytedance/seedance-1.5-pro`, `kling-2.6/text-to-video`, `kling-2.6/image-to-video` | No run yet, `seedance-2` is the only video model exercised so far |
 | `nano-banana-pro`, including its reference image cap | Documentation-only |
-| `gpt-image-2-text-to-image`, `gpt-image-2-image-to-image` | Documentation-only |
+| `gpt-image-2-text-to-image` | Documentation-only (`-image-to-image` variant is confirmed) |
 | `seedream/4-5-edit` | Documentation-only |
 | Kling's `image_urls` field | Read off a request example in the docs, not a labeled schema |
 | The plugin install flow | No repo published, `/plugin install` never run |
 
-One successful image run on one model doesn't validate the video path, the other image models, or the plugin install.
+Video, image, and motion-design paths are all now proven end to end on at least one model each. Remaining gaps are model coverage (three video/image models never exercised) and the plugin install flow.
 
 ## Distribution copy vs. live install
 
