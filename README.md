@@ -1,5 +1,7 @@
 # Kie Generate
 
+**Status:** Shipped 2026-08-18.
+
 A build log and reference for three Claude Code skills, `/generate-video`, `/generate-image`, and `/generate-motion-design`, that generate video, images, and motion graphics through one Kie AI API key instead of several per-platform subscriptions.
 
 ## Who this is for
